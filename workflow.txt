@@ -1,0 +1,92 @@
+1. Create a new repo in github
+2. Create a folder open that in terminal , launch it in vscode with help of code .
+3.create a separate environment for it
+4. conda create -p venv python==3.12 -y
+5. conda activate venv/
+6. Setup github so we can initialize commit
+7. git init
+8. Create a readme file : README.md 
+9. Type: ## End to End Machine Learning Project
+10. add readme file to github :git add README.md
+11. add commit : git commit -m "First commit"
+12. git branch -M main
+13. git remote add origin https://github.com/rui-2002/mlproject.git
+14. git remote -v (check link with github origin)
+15. for first time -> add username and email
+
+:git config --global user.name "rui-2002"
+:git config --global user.email sangwansumit628@gmail.com
+
+16. to push :git push -u origin main
+17. In github add : .gitignore (file in python)
+reason : some file that may not be commited in github get removed
+18 to update from git : git pull
+19.create file : setup.py and requirements.txt
+setup.py create ml project as a package 
+
+
+## put this in setup.py : meta-data info about all project (info about package)
+
+
+
+##################################################################################################
+
+from setuptools import find_packages,setup
+
+
+
+
+
+setup(
+    name='mlproject',
+    version='0.0.1',
+    author='Sumit',
+    author_email='sangwansumit628@gmail.com',
+    packages=find_packages(),
+    install_requires=['pandas','numpy','seaborn']
+    
+)
+
+
+
+##################################################################################################
+
+
+
+
+
+
+
+
+## this packages method in setup will find packages
+## setup.py will find out how many packages are there and where they are
+## src(source) folder find out to be a package i.e by creating a file init i.e __init__.py
+
+
+16. Create a folder in vscode src(source) : src
+17. Create : __init__.py (file in src)
+
+## whenver this setup.py (find package is running it will find how many folder do you have __init__.py file)
+## now setup.py (will consider src as package)
+## Note : to be a package it must contain __inti__.py file
+## this setup.py will try to build the package and after building it we can import it anywhere we want.(like seabor,pandas)
+## but for that we have to place it in pypy package itself.
+## entire project building will happen in src folder.
+## whenever we create new folder there will be using it as a package
+
+
+## Note : but we req many package in setup (setup.py) , therefore we create a function
+
+
+18. Whenver we try to install all the requirements.txt , then setup.py file should run to build the packages
+# to enable that we specifically write : -e .(we should add it in requirements.txt and remove in setup.py)
+# this will auto matically trigger setup.py
+
+
+
+
+
+
+
+
+19. pip install requirements.txt
