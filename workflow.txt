@@ -128,3 +128,24 @@ setup(
 21. git status (new files which are added)
 22. git commit -m "Second Commit "
 23. git push -u origin main
+
+
+24. Create component as a package i.e (created components in src and  create __init__.py)
+## this components all the modules we are going to create (eg we create data ingestion i.e reading a dataset from database or other resource) 
+
+25. After data ingestion we try differnt technique data transormation,validation etx
+26. Creating data_transformation.py (one hot encoding,label encoding,missing data)
+27. Create model_trainer.py (For training purpose,evalution matrix , also using for deployment i.e consist of seprate package but concluding it in this for now)
+
+28. Create a new folder pipeline is src
+pipeline will containe trainer pipeline (from trainer pipeline we will trigger/call components)and other is predict pipeline (for predicting purpose once model is created)
+create __int__.py file so that we can import it
+
+# as our entire project implementation will be happening inside the source
+## we create 3 import files over here(for logging,exception,utils (any functionality we will be writing in common way which we will use in entire application))
+ 
+
+ 29. Create logger.py , utils.py , exception.py in src
+
+ ## utils (read data from dataset,create mongodb client over here,write code to save  model in the code)
+ 
