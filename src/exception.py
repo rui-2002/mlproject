@@ -1,5 +1,7 @@
 import sys
 from src.logger import logging
+
+
 # whenver error encountered we will push our own custom message
 # return type of sys provides execution info that gives us three important info
 # first two are not necessary,last gives us exc_tb (which file,line error has occured)
@@ -24,3 +26,4 @@ class CustomException(Exception):
     def __str__(self):
         return self.error_message
         
+

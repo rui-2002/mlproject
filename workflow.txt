@@ -149,3 +149,19 @@ create __int__.py file so that we can import it
 
  ## utils (read data from dataset,create mongodb client over here,write code to save  model in the code)
  
+
+
+
+
+ -----------------------------------------------------------------------------------------------------
+ # workflow 2 :
+
+ 1. lets start with data ingestion in components (splittin ,cross validation ,reading the data) after then only data ingestion will happen
+ whenever we apply data ingestion some input is required for data ingestion(such as saving input path,path saving raw data) those type of input are created in different class as Dataingestion config class.
+ for input we use Dataingestion config class  
+ * To use this data ingestion class we need a decorator dataclass
+ * Because inside a class , to define class variable we use init but if we try to use this dataclass we can able to define class variable
+
+ 2. To read data from the other dataset ,we can create mongodb/sql client in utils file and read in data ingestion.
+ 3. Always write log to see incase exception happen we can find it where it will happen.
+ 
