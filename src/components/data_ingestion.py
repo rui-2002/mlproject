@@ -13,7 +13,7 @@ class DataIngestionConfig:
     train_data_path:str=os.path.join('artifacts',"train.csv")
     # this is the path we are giving to data ingestion component and its output will be stored 
     # in this path (inside artifcat folder)
-    test_data_path: str=os.path.join('artifcats',"test.csv")
+    test_data_path: str=os.path.join('artifacts',"test.csv")
     raw_data_path: str=os.path.join('artifacts','data.csv')
 
 # started our class data ingestion , if we only want to define variable then we can use dataclass
@@ -31,20 +31,20 @@ class DataIngestion:
         logging.info("Entered the data ingestion method or component") # for now just (make it simple) read our dataset
         try:
             # here we read from mongodb/sql
-            df=pd.read_csv('mlproject/notebook/data/stud.csv')
+            df=pd.read_csv('notebook/data/stud.csv')
             logging.info('Read the dataset as dataframe')
             
 
             # we already know the path of train,test,data path so lets create the folder
-            os.makedirs(os.path.dirnames(self.ingestion_config.train_data_path),exist_ok=True)
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
 
-            df.to_csv(self.ingestion_config.raw_data_path,index=False)
+            df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
 
             logging.info("Train test split initiated")
             # done splitting and saving into the folder
             train_set,test_set=train_test_split(df,test_size=0.2,random_state=42)
-            train_set.to_csv(self.ingestion_config.train_data_path,index=True)
-            test_set.to_csv(self.ingestion_config.test_data_path,index=True)
+            train_set.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
+            test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
 
             logging.info("Ingestion of the data is completed")
 

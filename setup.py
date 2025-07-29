@@ -12,6 +12,7 @@ def get_requirements(file_path:str)->List[str]:
     with open(file_path) as file_obj:
         requirements=file_obj.readlines()
         # replace slash(next line ) with blank
+        
         requirements=[req.replace("\n"," ") for req in requirements]
 
         # remove '-e .' while installing package as it may cause error
