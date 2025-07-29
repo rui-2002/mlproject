@@ -165,3 +165,6 @@ create __int__.py file so that we can import it
  2. To read data from the other dataset ,we can create mongodb/sql client in utils file and read in data ingestion.
  3. Always write log to see incase exception happen we can find it where it will happen.
  
+
+ 4. run data_ingestion file :python src/components/data_ingestion.py
+ you will se artifacts folder will be created.
