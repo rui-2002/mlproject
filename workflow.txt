@@ -178,3 +178,7 @@ create __int__.py file so that we can import it
 
  6. created model_trainer and write its common fn in utils.
  7. after complting model_trainer add this into data ingestion src.components.model_trainer import ModelTraineConfig,ModelTrainer.
+ 8. created flask app (app.py)
+ 9.created templates (index.html,home.html )
+ 10. created predict_pipeline.py
+ 

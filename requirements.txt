@@ -6,5 +6,6 @@ catboost
 xgboost
 scikit-learn
 dill
+flask
 
 #-e . #comment it when we don't want to create package again and again while installing module
