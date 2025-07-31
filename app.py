@@ -21,7 +21,7 @@ def index():
 
 def predict_datapoint():
     if request.method=='GET':
-        return render_template('home.html') # return default homepage not index.html (it include simple datafield provided to model to do prediction)
+        return render_template('index.html') # return default homepage not index.html (it include simple datafield provided to model to do prediction)
     
     else:
         
@@ -48,9 +48,9 @@ def predict_datapoint():
         # given (pred_df) dataframe in predict function
         # it will got to predict fn in predict_pipeline then transformation will happen
         results=predict_pipeline.predict(pred_df)
-        #returning values ing home.html
+        #returning values ing index.html
         # result[0] because all the values will be in list format
-        return render_template('home.html',results=results[0])
+        return render_template('index.html',results=results[0])
 
 
 
@@ -60,4 +60,6 @@ if __name__=="__main__":
     app.run(host="0.0.0.0",debug=True)
 
     # go to http://127.0.0.1:5000/
-    
+
+
+
