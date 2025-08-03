@@ -1,5 +1,6 @@
 import sys
 import pandas as pd
+import numpy as np
 from src.exception import CustomException
 from src.utils import load_object # to load our pkl file
 
@@ -21,6 +22,7 @@ class PredictPipeline:
             # after loading this we need to scale the data i.e transform our features.
             data_scaled=preprocessor.transform(features)
             preds=model.predict(data_scaled)
+            preds = np.clip(preds, 0, 100)
             return preds
         except Exception as e:
             raise CustomException(e,sys)

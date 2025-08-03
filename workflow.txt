@@ -181,4 +181,28 @@ create __int__.py file so that we can import it
  8. created flask app (app.py)
  9.created templates (index.html,index.html )
  10. created predict_pipeline.py
+ 11. run python app.py with http://127.0.0.1:5000/
+
  
+
+
+
+
+
+
+
+
+#######deployment######################3
+
+ #### workign with elastic bean stock
+ 1. we need to config 2 extension while working on elastic beanstock (.ebextension)
+ added python config file to tell the elastic bean stock saying what is the entry point of your application.
+ this is specifically for python container (for docker it will be separate)
+
+ python.config file is to tell what is the entry point of your application (most imp)
+ conatiner used :python
+
+ it is compulsory to give in the format application:application
+ therefroe created application file same as app.py should be created.
+
+ Remove debug=True while deploying the file.
