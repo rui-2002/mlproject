@@ -58,7 +58,7 @@ def predict_datapoint():
 # to run python file
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0",debug=True)
+    app.run(host="0.0.0.0")
 
     # go to http://127.0.0.1:5000/
 
